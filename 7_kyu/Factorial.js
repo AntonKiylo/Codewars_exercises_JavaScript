@@ -1,5 +1,11 @@
-function factorial(n){
-  return (n != 1) ? n * factorial(n - 1) : 1;
+function factorial(n) {
+  if (n < 0 || n > 12) {
+    throw new RangeError();
+  } else if (n === 0) {
+    return 1;
+  } else {
+    return (n * factorial(n - 1));
+  }
 }
 
 console.log(factorial(0)) // ==> 1
